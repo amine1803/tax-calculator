@@ -1,13 +1,34 @@
 {
-  "extends": "./tsconfig.app.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "baseUrl": "./src",
+    "jsx": "react-jsx",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "paths": {
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@icons/*": [
+        "assets/icons/*"
+      ]
+    },
+    "types": [
+      "@testing-library/jest-dom",
+      "jest",
+      "node",
+      "node-fetch"
+    ]
   },
-  "types": [
-    "jest",
-    "@testing-library/jest-dom"
-  ],
   "include": [
-    "src/**/*.test.tsx"
+    "src/**/*.test.(ts|tsx)",
+    "src/*.d.ts"
   ]
 }
