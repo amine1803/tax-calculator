@@ -1,6 +1,6 @@
 import type { ActionDispatch } from "react";
 import type { TaxBracketResponse } from "../components/tax-calculation-form/TaxCalculationForm.types";
-import type { TaxCalculationAction } from "../store/tax-calculation.store.ts";
+import type { TaxCalculationAction } from "../store/tax-calculation.store";
 
 export async function getTaxBrackets(
     dispatch: ActionDispatch<[action: TaxCalculationAction]>,
@@ -19,10 +19,6 @@ export async function getTaxBrackets(
         dispatch({
             type: "SET_TAX_BRACKETS",
             payload: data.tax_brackets || [],
-        });
-        dispatch({
-            type: "SET_PREVIOUS_YEAR",
-            payload: year,
         });
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);

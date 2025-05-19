@@ -3,7 +3,7 @@ import type { TaxBracket } from "../components/tax-calculation-form/TaxCalculati
 export type TaxCalculationAction =
     | {
           type: "SET_INCOME";
-          payload: number;
+          payload: number | "";
       }
     | {
           type: "SET_YEAR";
@@ -19,7 +19,7 @@ export type TaxCalculationAction =
       }
     | {
           type: "SET_ERROR";
-          payload: string;
+          payload?: string;
       }
     | {
           type: "SUBMIT";
@@ -31,7 +31,7 @@ export type TaxCalculationAction =
 export type TaxCalculationPageState = "init" | "loading" | "loaded" | "error";
 
 export interface TaxCalculationState {
-    income?: number;
+    income?: number | "";
     year: number;
     taxBrackets: Record<number, TaxBracket[]>;
     pageState: TaxCalculationPageState;

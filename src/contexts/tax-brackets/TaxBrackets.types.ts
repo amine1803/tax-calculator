@@ -1,8 +1,5 @@
 import type { Dispatch } from "react";
-import type {
-    TaxCalculationAction,
-    TaxCalculationState,
-} from "../../store/tax-calculation.store.ts";
+import type { TaxCalculationAction, TaxCalculationState } from "../../store/tax-calculation.store";
 
 export interface TaxCalculationContextType {
     state: TaxCalculationState;

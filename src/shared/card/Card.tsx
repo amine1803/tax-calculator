@@ -2,7 +2,7 @@ import styles from "./Card.module.scss";
 import type { CardProps } from "./Card.types";
 import Button from "../button/Button";
 
-function Card({ children, className, title, actions, actionsPosition }: CardProps) {
+function Card({ children, className, title, actions, actionsPosition, ...props }: CardProps) {
     const cardClassName = [styles.card, className].filter(Boolean).join(" ");
     const cardActionsClassName = [
         styles.card__actions,
@@ -10,7 +10,9 @@ function Card({ children, className, title, actions, actionsPosition }: CardProp
     ].join(" ");
 
     return (
-        <div className={cardClassName}>
+        <div
+            className={cardClassName}
+            {...props}>
             {title && <span className={styles.card__title}>{title}</span>}
 
             <div className={styles.card__body}>{children}</div>

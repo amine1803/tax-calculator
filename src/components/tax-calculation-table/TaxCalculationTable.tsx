@@ -13,7 +13,7 @@ import {
     selectPageState,
     selectTaxBrackets,
     selectYear,
-} from "../../store/tax-calculation.store.ts";
+} from "../../store/tax-calculation.store";
 
 function TaxCalculationTable() {
     const { state } = useTaxBracketsContext();
