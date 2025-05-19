@@ -4,7 +4,7 @@ import App from "./App";
 describe("App", () => {
     it("renders title", () => {
         render(<App />);
-        expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Tax Calculator");
+        expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Tax Calculator");
     });
 
     it("renders components", () => {

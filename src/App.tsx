@@ -7,7 +7,7 @@ import TaxBracketsProvider from "./contexts/tax-brackets/TaxBrackets.provider";
 function App() {
     return (
         <TaxBracketsProvider>
-            <h2 className={styles.title}>Tax Calculator</h2>
+            <h1 className={styles.title}>Tax Calculator</h1>
             <TaxCalculationEffect />
             <TaxCalculationForm />
             <TaxCalculationTable />

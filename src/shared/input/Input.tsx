@@ -1,14 +1,8 @@
-import { InputHTMLAttributes, KeyboardEventHandler } from "react";
+import { KeyboardEventHandler } from "react";
 import styles from "./Input.module.scss";
+import { InputProps } from "./Input.types";
 
-function Input({
-    value,
-    prefix,
-    className,
-    type,
-    onKeyDown,
-    ...props
-}: InputHTMLAttributes<HTMLInputElement>) {
+function Input({ value, prefix, className, type, onKeyDown, ...props }: InputProps) {
     // Class name(s)
     const wrapperClassName = [styles.input, className].filter(Boolean).join(" ");
     const fieldClassName = [styles.input__field, styles["input__field--with-prefix"]].join(" ");

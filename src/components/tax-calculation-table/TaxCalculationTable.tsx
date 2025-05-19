@@ -31,7 +31,7 @@ function TaxCalculationTable() {
     // Header cells
     const headers = ["Tax bracket(s)", "Income tax amount"];
 
-    // Rows cells content (brackets + amount)
+    // Rows cells content (brackets & amount)
     const rows = useMemo(() => {
         if (!taxBrackets[year]) return [];
 
@@ -40,8 +40,8 @@ function TaxCalculationTable() {
 
             const bracket =
                 taxBracket.max !== undefined
-                    ? `$${taxBracket.min} - $${taxBracket.max}`
-                    : `$${taxBracket.min}+`;
+                    ? `$${taxBracket.min.toLocaleString(undefined, { maximumFractionDigits: 2 })} - $${taxBracket.max.toLocaleString(undefined, { maximumFractionDigits: 0 })} (${(taxBracket.rate * 100).toFixed(1)}%)`
+                    : `> $${taxBracket.min.toLocaleString(undefined, { maximumFractionDigits: 2 })} (${(taxBracket.rate * 100).toFixed(1)}%)`;
 
             const upperBound =
                 taxBracket.max !== undefined ? Math.min(income, taxBracket.max) : income;

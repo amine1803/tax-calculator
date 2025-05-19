@@ -43,9 +43,9 @@ describe("TaxCalculationTable", () => {
         });
         render(<TaxCalculationTable />);
         expect(screen.getByRole("table")).toBeInTheDocument();
-        expect(screen.getByText("$0 - $20000")).toBeInTheDocument();
-        expect(screen.getByText("$20000 - $50000")).toBeInTheDocument();
-        expect(screen.getByText("$50000+")).toBeInTheDocument();
+        expect(screen.getByText("$0 - $20,000 (10.0%)")).toBeInTheDocument();
+        expect(screen.getByText("$20,000 - $50,000 (20.0%)")).toBeInTheDocument();
+        expect(screen.getByText("> $50,000 (30.0%)")).toBeInTheDocument();
         expect(screen.getByText(/total income tax amount/i)).toBeInTheDocument();
         expect(screen.getByText(/salary after income tax/i)).toBeInTheDocument();
     });
@@ -66,10 +66,10 @@ describe("TaxCalculationTable", () => {
         (useTaxBracketsContext as jest.Mock).mockReturnValue({ state: mockState });
         render(<TaxCalculationTable />);
         expect(
-            screen.getByText((_, element) => element?.textContent === "$11000.00"),
+            screen.getByText((_, element) => element?.textContent === "$11,000.00"),
         ).toBeInTheDocument();
         expect(
-            screen.getByText((_, element) => element?.textContent === "$49000.00"),
+            screen.getByText((_, element) => element?.textContent === "$49,000.00"),
         ).toBeInTheDocument();
     });
 

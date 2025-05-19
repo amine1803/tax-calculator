@@ -61,6 +61,11 @@ html {
   height: 100%;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 h1,
 h2,
 h3,
@@ -76,9 +81,8 @@ thead,
 }
 
 #root {
-  display: grid;
-  width: 100%;
+  display: inline-grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 300px 600px;
   grid-template-rows: auto auto;
 }

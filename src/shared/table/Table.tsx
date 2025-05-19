@@ -26,7 +26,9 @@ function Table<T extends object>({
 
     // Verifies if a cell is a number and a currency and makes sure to put the currency and 2 decimals
     const cellValue = (value: number | string | boolean) =>
-        typeof value === "number" && isCurrency && value ? `$${value.toFixed(2)}` : value;
+        typeof value === "number" && isCurrency && value
+            ? `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+            : value;
 
     return (
         <table className={tableClassName}>

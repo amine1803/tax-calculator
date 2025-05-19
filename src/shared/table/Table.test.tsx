@@ -57,9 +57,9 @@ describe("Table", () => {
                 isCurrency
             />,
         );
-        expect(screen.getByText("$1000.00")).toBeInTheDocument();
-        expect(screen.getByText("$2000.00")).toBeInTheDocument();
-        expect(screen.getByText("$3000.00")).toBeInTheDocument();
+        expect(screen.getByText("$1,000.00")).toBeInTheDocument();
+        expect(screen.getByText("$2,000.00")).toBeInTheDocument();
+        expect(screen.getByText("$3,000.00")).toBeInTheDocument();
     });
 
     it("throws error if row column count mismatches header", () => {
