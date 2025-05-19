@@ -9,6 +9,7 @@ function Table<T extends object>({
     cellAlignment,
     isCurrency,
 }: TableProps<T>) {
+    // Checks if there are more keys in either the header or the rows and throws an error if applicable
     if (headers && rows) {
         const headerLength = headers.length;
         const mismatched = rows.some((row) => Object.keys(row).length !== headerLength);
@@ -17,11 +18,13 @@ function Table<T extends object>({
             throw new Error("One or more rows do not match the header column count in the table.");
     }
 
+    // Class name(s)
     const tableClassName = [styles.table, className].filter(Boolean).join(" ");
     const cellClassName = [styles.table__cell, styles[`table__cell--${cellAlignment ?? "left"}`]]
         .filter(Boolean)
         .join(" ");
 
+    // Verifies if a cell is a number and a currency and makes sure to put the currency and 2 decimals
     const cellValue = (value: number | string | boolean) =>
         typeof value === "number" && isCurrency && value ? `$${value.toFixed(2)}` : value;
 

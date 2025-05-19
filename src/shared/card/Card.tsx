@@ -3,6 +3,7 @@ import type { CardProps } from "./Card.types";
 import Button from "../button/Button";
 
 function Card({ children, className, title, actions, actionsPosition, ...props }: CardProps) {
+    // Class name(s)
     const cardClassName = [styles.card, className].filter(Boolean).join(" ");
     const cardActionsClassName = [
         styles.card__actions,

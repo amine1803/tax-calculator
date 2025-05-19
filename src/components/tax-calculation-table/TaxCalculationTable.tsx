@@ -17,19 +17,21 @@ import {
 import { isNumber } from "../../utils/assertions";
 
 function TaxCalculationTable() {
+    // State
     const { state } = useTaxBracketsContext();
     const [dots, setDots] = useState("");
-
     const income = selectIncome(state);
     const year = selectYear(state);
     const taxBrackets = selectTaxBrackets(state);
     const pageState = selectPageState(state);
     const error = selectError(state);
     const isSubmitted = selectIsSubmitted(state);
-
     const isLoading = selectIsLoading(state);
 
+    // Header cells
     const headers = ["Tax bracket(s)", "Income tax amount"];
+
+    // Rows cells content (brackets + amount)
     const rows = useMemo(() => {
         if (!taxBrackets[year]) return [];
 
@@ -48,6 +50,8 @@ function TaxCalculationTable() {
             return [...acc, { bracket, amount }];
         }, [] as TaxCalculationTableType[]);
     }, [isSubmitted]);
+
+    // Footer that contains the total tax amount to pay and the salary after taxes
     const footer = useMemo(() => {
         if (!isNumber(income) || rows.length === 0) return [];
 
@@ -64,6 +68,7 @@ function TaxCalculationTable() {
         ] as Record<string, number>[];
     }, [rows]);
 
+    // Effect for visual loading state that adds dots to loading and loops back after 3 dots
     useEffect(() => {
         if (!isLoading) return;
 

@@ -1,5 +1,6 @@
 import type { TaxBracket } from "../../components/tax-calculation-form/TaxCalculationForm.types.ts";
 
+// Actions that can be dispatched
 export type TaxCalculationAction =
     | {
           type: "SET_INCOME";
@@ -28,8 +29,10 @@ export type TaxCalculationAction =
           type: "RESET";
       };
 
+// Page states
 export type TaxCalculationPageState = "init" | "loading" | "loaded" | "error";
 
+// General state
 export interface TaxCalculationState {
     income?: number | "";
     year: number;
@@ -39,6 +42,7 @@ export interface TaxCalculationState {
     isSubmitted: boolean;
 }
 
+// Initial state
 export const initialTaxCalculationState: TaxCalculationState = {
     year: 2022,
     taxBrackets: [],
@@ -46,6 +50,7 @@ export const initialTaxCalculationState: TaxCalculationState = {
     isSubmitted: false,
 };
 
+// Reducer
 export function taxCalculationReducer(
     state: TaxCalculationState,
     action: TaxCalculationAction,
@@ -78,7 +83,7 @@ export function taxCalculationReducer(
     }
 }
 
-// SELECTORS
+// Selectors
 export const selectIncome = (state: TaxCalculationState) => state.income;
 export const selectYear = (state: TaxCalculationState) => state.year;
 export const selectTaxBrackets = (state: TaxCalculationState) => state.taxBrackets;

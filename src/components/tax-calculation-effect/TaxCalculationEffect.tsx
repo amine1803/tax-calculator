@@ -9,13 +9,14 @@ import {
 } from "../../store/tax-calculation/tax-calculation";
 
 function TaxCalculationEffect() {
+    // State
     const { state, dispatch } = useTaxBracketsContext();
-
     const year = selectYear(state);
     const taxBrackets = selectTaxBrackets(state);
     const isSubmitted = selectIsSubmitted(state);
     const isError = selectIsError(state);
 
+    // Gets the brackets when submitting + no bracket stored in the state
     useEffect(() => {
         if (isSubmitted) {
             if (!taxBrackets[year]) {

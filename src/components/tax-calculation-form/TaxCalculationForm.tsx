@@ -13,14 +13,16 @@ import {
 import { isNumber } from "../../utils/assertions";
 
 function TaxCalculationForm() {
+    // State
     const { state, dispatch } = useTaxBracketsContext();
-
     const income = selectIncome(state);
     const year = selectYear(state);
     const isLoading = selectIsLoading(state);
 
+    // Years to select
     const years = [2022, 2021, 2020, 2019];
 
+    // Action buttons props at the bottom of the form
     const actions: ButtonProps[] = [
         {
             label: "Submit",
@@ -36,11 +38,13 @@ function TaxCalculationForm() {
         },
     ];
 
+    // Event listener that converts the income value to a number or empty string depending on the need
     const onIncomeInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const income = event.target.value;
         dispatch({ type: "SET_INCOME", payload: income === "" ? "" : +income });
     };
 
+    // Event listener that converts the year value to a number
     const onYearSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const year = event.target.value;
         dispatch({ type: "SET_YEAR", payload: +year });

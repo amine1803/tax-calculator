@@ -2,6 +2,7 @@ import styles from "./Button.module.scss";
 import type { ButtonProps } from "./Button.types";
 
 function Button({ label, variant, type, disabled, ...props }: ButtonProps) {
+    // Class name(s)
     const buttonClassName = [styles.button, styles[`button--${variant || "filled"}`]].join(" ");
 
     return (

@@ -7,8 +7,10 @@ import {
 } from "../../store/tax-calculation/tax-calculation";
 
 function TaxBracketsProvider({ children }: PropsWithChildren) {
+    // State
     const [state, dispatch] = useReducer(taxCalculationReducer, initialTaxCalculationState);
 
+    // Guarantees the state management updates when state or dispatch function is changed
     const contextValue = useMemo<TaxCalculationContextType>(
         () => ({ state, dispatch }),
         [state, dispatch],
