@@ -1,0 +1,43 @@
+.button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+
+  &[data-disabled="true"] {
+    cursor: not-allowed;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-surface-container-highest);
+    border: 1px solid var(--md-sys-color-surface-dim);
+    pointer-events: none;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &--filled {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+
+    &:hover {
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+    }
+  }
+
+  &--outlined {
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    border: 1px solid var(--md-sys-color-outline-variant);
+
+    &:hover {
+      background-color: var(--md-sys-color-surface-variant);
+      color: var(--md-sys-color-on-surface-variant);
+      border-color: var(--md-sys-color-outline-variant);
+    }
+  }
+}

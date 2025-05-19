@@ -1,0 +1,17 @@
+@use "@styles/form-field" as form-field;
+
+.input {
+  @include form-field.wrapper;
+
+  &__prefix {
+    @include form-field.prefix;
+  }
+
+  &__field {
+    @include form-field.field;
+
+    &.input__field--with-prefix {
+      padding-left: 0.25rem;
+    }
+  }
+}
