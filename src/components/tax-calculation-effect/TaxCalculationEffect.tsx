@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useTaxBracketsContext } from "../../hooks/use-tax-brackets-context";
-import { getTaxBrackets } from "../../services/tax-brackets";
+import { getTaxBrackets } from "../../services/tax-brackets/tax-brackets";
 import {
     selectIsError,
     selectIsSubmitted,
     selectTaxBrackets,
     selectYear,
-} from "../../store/tax-calculation.store";
+} from "../../store/tax-calculation/tax-calculation";
 
 function TaxCalculationEffect() {
     const { state, dispatch } = useTaxBracketsContext();

@@ -1,6 +1,6 @@
 import type { ActionDispatch } from "react";
-import type { TaxBracketResponse } from "../components/tax-calculation-form/TaxCalculationForm.types";
-import type { TaxCalculationAction } from "../store/tax-calculation.store";
+import type { TaxBracketResponse } from "../../components/tax-calculation-form/TaxCalculationForm.types.ts";
+import type { TaxCalculationAction } from "../../store/tax-calculation/tax-calculation.ts";
 
 export async function getTaxBrackets(
     dispatch: ActionDispatch<[action: TaxCalculationAction]>,

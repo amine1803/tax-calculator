@@ -22,6 +22,9 @@ function Table<T extends object>({
         .filter(Boolean)
         .join(" ");
 
+    const cellValue = (value: number | string | boolean) =>
+        typeof value === "number" && isCurrency && value ? `$${value.toFixed(2)}` : value;
+
     return (
         <table className={tableClassName}>
             {headers && (
@@ -43,14 +46,11 @@ function Table<T extends object>({
                         <tr
                             key={rowIndex}
                             className={styles.table__row}>
-                            {Object.values(row).map((cell, cellIndex) => (
+                            {Object.values(row).map((value, cellIndex) => (
                                 <td
                                     key={cellIndex}
                                     className={cellClassName}>
-                                    {typeof cell === "number" && isCurrency && "$"}
-                                    {typeof cell === "number" && isCurrency
-                                        ? cell.toFixed(2)
-                                        : cell}
+                                    {cellValue(value)}
                                 </td>
                             ))}
                         </tr>
@@ -69,12 +69,7 @@ function Table<T extends object>({
                                     aria-level={1}>
                                     {key}
                                 </td>
-                                <td className={cellClassName}>
-                                    {typeof value === "number" && isCurrency && "$"}
-                                    {typeof value === "number" && isCurrency
-                                        ? value.toFixed(2)
-                                        : value}
-                                </td>
+                                <td className={cellClassName}>{cellValue(value)}</td>
                             </tr>
                         );
                     })}

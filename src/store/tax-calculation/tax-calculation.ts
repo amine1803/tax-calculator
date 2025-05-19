@@ -1,4 +1,4 @@
-import type { TaxBracket } from "../components/tax-calculation-form/TaxCalculationForm.types";
+import type { TaxBracket } from "../../components/tax-calculation-form/TaxCalculationForm.types.ts";
 
 export type TaxCalculationAction =
     | {

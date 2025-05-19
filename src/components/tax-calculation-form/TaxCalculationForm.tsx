@@ -1,10 +1,15 @@
+import { ChangeEvent } from "react";
 import styles from "./TaxCalculationForm.module.scss";
 import { useTaxBracketsContext } from "../../hooks/use-tax-brackets-context";
 import type { ButtonProps } from "../../shared/button/Button.types";
 import Card from "../../shared/card/Card";
 import Input from "../../shared/input/Input";
 import Select from "../../shared/select/Select";
-import { selectIncome, selectYear } from "../../store/tax-calculation.store";
+import {
+    selectIncome,
+    selectIsLoading,
+    selectYear,
+} from "../../store/tax-calculation/tax-calculation";
 import { isNumber } from "../../utils/assertions";
 
 function TaxCalculationForm() {
@@ -12,6 +17,7 @@ function TaxCalculationForm() {
 
     const income = selectIncome(state);
     const year = selectYear(state);
+    const isLoading = selectIsLoading(state);
 
     const years = [2022, 2021, 2020, 2019];
 
@@ -19,15 +25,26 @@ function TaxCalculationForm() {
         {
             label: "Submit",
             type: "submit",
-            disabled: !isNumber(income),
+            disabled: isLoading || !isNumber(income),
             onClick: () => dispatch({ type: "SUBMIT" }),
         },
         {
             label: "Reset",
             variant: "outlined",
+            disabled: isLoading,
             onClick: () => dispatch({ type: "RESET" }),
         },
     ];
+
+    const onIncomeInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const income = event.target.value;
+        dispatch({ type: "SET_INCOME", payload: income === "" ? "" : +income });
+    };
+
+    const onYearSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        const year = event.target.value;
+        dispatch({ type: "SET_YEAR", payload: +year });
+    };
 
     return (
         <Card
@@ -37,16 +54,20 @@ function TaxCalculationForm() {
             data-testid="tax-calculation-form">
             <Input
                 value={isNumber(income) ? income : ""}
+                disabled={isLoading}
                 placeholder="Enter your income"
+                aria-label="income"
                 prefix="$"
                 type="number"
                 min="0"
-                onChange={(event) => dispatch({ type: "SET_INCOME", payload: +event.target.value })}
+                onChange={onIncomeInputChange}
             />
             <Select
                 value={year}
+                disabled={isLoading}
+                aria-label="year"
                 options={years}
-                onChange={(event) => dispatch({ type: "SET_YEAR", payload: +event.target.value })}
+                onChange={onYearSelectChange}
             />
         </Card>
     );

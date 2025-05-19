@@ -4,7 +4,7 @@ import type { TaxCalculationContextType } from "./TaxBrackets.types";
 import {
     initialTaxCalculationState,
     taxCalculationReducer,
-} from "../../store/tax-calculation.store";
+} from "../../store/tax-calculation/tax-calculation";
 
 function TaxBracketsProvider({ children }: PropsWithChildren) {
     const [state, dispatch] = useReducer(taxCalculationReducer, initialTaxCalculationState);

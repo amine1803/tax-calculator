@@ -13,7 +13,8 @@ import {
     selectPageState,
     selectTaxBrackets,
     selectYear,
-} from "../../store/tax-calculation.store";
+} from "../../store/tax-calculation/tax-calculation";
+import { isNumber } from "../../utils/assertions";
 
 function TaxCalculationTable() {
     const { state } = useTaxBracketsContext();
@@ -33,7 +34,7 @@ function TaxCalculationTable() {
         if (!taxBrackets[year]) return [];
 
         return taxBrackets[year].reduce((acc, taxBracket) => {
-            if (income == null || taxBracket.min > income) return acc;
+            if (!isNumber(income) || taxBracket.min > income) return acc;
 
             const bracket =
                 taxBracket.max !== undefined
@@ -48,7 +49,7 @@ function TaxCalculationTable() {
         }, [] as TaxCalculationTableType[]);
     }, [isSubmitted]);
     const footer = useMemo(() => {
-        if (income == null || rows.length === 0) return [];
+        if (!isNumber(income) || rows.length === 0) return [];
 
         const totalTax = rows.reduce((acc, row) => {
             const amount = row.amount;

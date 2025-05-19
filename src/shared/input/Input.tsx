@@ -22,7 +22,7 @@ function Input({
             {prefix && <span className={styles.input__prefix}>{prefix}</span>}
             <input
                 className={fieldClassName}
-                value={value ?? ""}
+                value={value}
                 onKeyDown={onInputKeyDown}
                 {...props}
             />
