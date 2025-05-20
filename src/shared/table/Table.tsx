@@ -1,5 +1,6 @@
 import styles from "./Table.module.scss";
 import type { TableProps } from "./Table.types";
+import { formatNumber, isNumber } from "../../utils/number";
 
 function Table<T extends object>({
     headers,
@@ -9,7 +10,7 @@ function Table<T extends object>({
     cellAlignment,
     isCurrency,
 }: TableProps<T>) {
-    // Checks if there are more keys in either the header or the rows and throws an error if applicable
+    // Checks if there are more keys in either the header or the rows and throws an error if there's a mismatch
     if (headers && rows) {
         const headerLength = headers.length;
         const mismatched = rows.some((row) => Object.keys(row).length !== headerLength);
@@ -26,9 +27,7 @@ function Table<T extends object>({
 
     // Verifies if a cell is a number and a currency and makes sure to put the currency and 2 decimals
     const cellValue = (value: number | string | boolean) =>
-        typeof value === "number" && isCurrency && value
-            ? `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-            : value;
+        isNumber(value) && isCurrency && value ? `$${formatNumber(value, 2, 2)}` : value;
 
     return (
         <table className={tableClassName}>

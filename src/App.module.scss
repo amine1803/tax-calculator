@@ -1,4 +1,7 @@
 .title {
   justify-self: center;
-  grid-column: span 2;
+
+  @media screen and (min-width: 901px) {
+    grid-column: span 2;
+  }
 }

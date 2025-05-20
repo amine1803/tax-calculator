@@ -23,8 +23,12 @@
   }
 
   &__footer {
-    tr:first-child td {
-      padding-top: 1rem;
+    tr {
+      text-align: right;
+
+      &:first-child td {
+        padding-top: 1rem;
+      }
     }
   }
 
