@@ -188,7 +188,12 @@
 <a name='L123'></a><a href='#L123'>123</a>
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,8 +212,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -216,10 +219,14 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -238,6 +245,8 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -249,6 +258,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -329,22 +339,24 @@ import {
     selectTaxBrackets,
     selectYear,
 } from "../../store/tax-calculation/tax-calculation";
-import { isNumber } from "../../utils/assertions";
+import { formatNumber, isNumber } from "../../utils/number";
 &nbsp;
 function TaxCalculationTable() {
+    // State
     const { state } = useTaxBracketsContext();
     const [dots, setDots] = useState("");
-&nbsp;
     const income = selectIncome(state);
     const year = selectYear(state);
     const taxBrackets = selectTaxBrackets(state);
     const pageState = selectPageState(state);
     const error = selectError(state);
     const isSubmitted = selectIsSubmitted(state);
-&nbsp;
     const isLoading = selectIsLoading(state);
 &nbsp;
+    // Header cells
     const headers = ["Tax bracket(s)", "Income tax amount"];
+&nbsp;
+    // Rows cells content (brackets and amount)
     const rows = useMemo(() =&gt; {
         if (!taxBrackets[year]) return [];
 &nbsp;
@@ -353,8 +365,8 @@ function TaxCalculationTable() {
 &nbsp;
             const bracket =
                 taxBracket.max !== undefined
-                    ? `$${taxBracket.min} - $${taxBracket.max}`
-                    : `$${taxBracket.min}+`;
+                    ? `$${formatNumber(taxBracket.min, 2)} - $${formatNumber(taxBracket.max, 0)} (${(taxBracket.rate * 100).toFixed(1)}%)`
+                    : `&gt; $${formatNumber(taxBracket.min, 2)} (${(taxBracket.rate * 100).toFixed(1)}%)`;
 &nbsp;
             const upperBound =
                 taxBracket.max !== undefined ? Math.min(income, taxBracket.max) : income;
@@ -363,6 +375,8 @@ function TaxCalculationTable() {
             return [...acc, { bracket, amount }];
         }, [] as TaxCalculationTableType[]);
     }, [isSubmitted]);
+&nbsp;
+    // Footer that contains the total tax amount to pay and the salary after taxes
     const footer = useMemo(() =&gt; {
         if (!isNumber(income) || rows.length === 0) return [];
 &nbsp;
@@ -379,6 +393,7 @@ function TaxCalculationTable() {
         ] as Record&lt;string, number&gt;[];
     }, [rows]);
 &nbsp;
+    // Effect for visual loading state that adds dots to loading and loops back after 3 dots
     useEffect(() =&gt; {
         if (!isLoading) return;
 &nbsp;
@@ -445,7 +460,7 @@ export default TaxCalculationTable;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-19T18:19:51.352Z
+                at 2025-05-20T02:53:17.637Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

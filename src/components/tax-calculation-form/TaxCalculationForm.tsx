@@ -10,7 +10,7 @@ import {
     selectIsLoading,
     selectYear,
 } from "../../store/tax-calculation/tax-calculation";
-import { isNumber } from "../../utils/assertions";
+import { isNumber } from "../../utils/number";
 
 function TaxCalculationForm() {
     // State

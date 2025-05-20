@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747678791360" clover="3.2.0">
-  <project timestamp="1747678791360" name="All files">
-    <metrics statements="184" coveredstatements="181" conditionals="90" coveredconditionals="84" methods="46" coveredmethods="44" elements="320" coveredelements="309" complexity="0" loc="184" ncloc="184" packages="14" files="15" classes="15"/>
+<coverage generated="1747709597647" clover="3.2.0">
+  <project timestamp="1747709597647" name="All files">
+    <metrics statements="186" coveredstatements="183" conditionals="90" coveredconditionals="84" methods="47" coveredmethods="45" elements="323" coveredelements="312" complexity="0" loc="186" ncloc="186" packages="14" files="15" classes="15"/>
     <package name="src">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="/Users/adanane/work/projects/tax-calculator/src/App.tsx">
@@ -23,19 +23,19 @@
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
         <line num="14" count="5" type="stmt"/>
         <line num="15" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
         <line num="17" count="5" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-        <line num="20" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="29" count="5" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.tax-calculation-form">
@@ -49,22 +49,22 @@
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
-        <line num="16" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
         <line num="18" count="9" type="stmt"/>
         <line num="19" count="9" type="stmt"/>
         <line num="20" count="9" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="39" count="9" type="stmt"/>
-        <line num="40" count="5" type="stmt"/>
-        <line num="41" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="44" count="9" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="49" count="9" type="stmt"/>
-        <line num="76" count="2" type="stmt"/>
+        <line num="23" count="9" type="stmt"/>
+        <line num="26" count="9" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="42" count="9" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="44" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="9" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="53" count="9" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.tax-calculation-table">
@@ -79,43 +79,43 @@
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
-        <line num="20" count="9" type="stmt"/>
         <line num="21" count="9" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
         <line num="23" count="9" type="stmt"/>
         <line num="24" count="9" type="stmt"/>
         <line num="25" count="9" type="stmt"/>
         <line num="26" count="9" type="stmt"/>
         <line num="27" count="9" type="stmt"/>
         <line num="28" count="9" type="stmt"/>
-        <line num="30" count="9" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
         <line num="32" count="9" type="stmt"/>
-        <line num="33" count="9" type="stmt"/>
-        <line num="34" count="9" type="cond" truecount="1" falsecount="0"/>
-        <line num="36" count="6" type="stmt"/>
-        <line num="37" count="18" type="cond" truecount="3" falsecount="0"/>
-        <line num="40" count="15" type="cond" truecount="2" falsecount="0"/>
-        <line num="45" count="15" type="cond" truecount="2" falsecount="0"/>
-        <line num="46" count="15" type="stmt"/>
+        <line num="35" count="9" type="stmt"/>
+        <line num="36" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="39" count="18" type="cond" truecount="3" falsecount="0"/>
+        <line num="42" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="15" type="cond" truecount="2" falsecount="0"/>
         <line num="48" count="15" type="stmt"/>
-        <line num="51" count="9" type="stmt"/>
-        <line num="52" count="9" type="cond" truecount="3" falsecount="0"/>
-        <line num="54" count="5" type="stmt"/>
-        <line num="55" count="15" type="stmt"/>
-        <line num="56" count="15" type="stmt"/>
-        <line num="59" count="5" type="stmt"/>
-        <line num="61" count="5" type="stmt"/>
-        <line num="67" count="9" type="stmt"/>
-        <line num="68" count="9" type="cond" truecount="1" falsecount="0"/>
-        <line num="70" count="1" type="stmt"/>
-        <line num="71" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="74" count="1" type="stmt"/>
-        <line num="77" count="9" type="stmt"/>
-        <line num="82" count="9" type="cond" truecount="4" falsecount="0"/>
-        <line num="84" count="3" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="96" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="110" count="1" type="stmt"/>
-        <line num="125" count="2" type="stmt"/>
+        <line num="50" count="15" type="stmt"/>
+        <line num="55" count="9" type="stmt"/>
+        <line num="56" count="9" type="cond" truecount="3" falsecount="0"/>
+        <line num="58" count="5" type="stmt"/>
+        <line num="59" count="15" type="stmt"/>
+        <line num="60" count="15" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="65" count="5" type="stmt"/>
+        <line num="72" count="9" type="stmt"/>
+        <line num="73" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="82" count="9" type="stmt"/>
+        <line num="87" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="89" count="3" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="101" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="130" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.contexts.tax-brackets">
@@ -123,18 +123,18 @@
       <file name="TaxBrackets.context.ts" path="/Users/adanane/work/projects/tax-calculator/src/contexts/tax-brackets/TaxBrackets.context.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
       </file>
       <file name="TaxBrackets.provider.tsx" path="/Users/adanane/work/projects/tax-calculator/src/contexts/tax-brackets/TaxBrackets.provider.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.hooks">
@@ -143,25 +143,25 @@
         <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="6" type="cond" truecount="0" falsecount="1"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.services.tax-brackets">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="tax-brackets.ts" path="/Users/adanane/work/projects/tax-calculator/src/services/tax-brackets/tax-brackets.ts">
         <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
-        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="24" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="25" count="2" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="28" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.button">
@@ -170,9 +170,9 @@
         <metrics statements="5" coveredstatements="5" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
         <line num="4" count="28" type="stmt"/>
-        <line num="5" count="28" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="28" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
+        <line num="6" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="28" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.card">
@@ -182,27 +182,26 @@
         <line num="1" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="5" count="24" type="stmt"/>
-        <line num="6" count="24" type="stmt"/>
         <line num="7" count="24" type="stmt"/>
-        <line num="12" count="24" type="stmt"/>
-        <line num="23" count="22" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
+        <line num="8" count="24" type="stmt"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="24" count="22" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.input">
-      <metrics statements="10" coveredstatements="10" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
       <file name="Input.tsx" path="/Users/adanane/work/projects/tax-calculator/src/shared/input/Input.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="9" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
         <line num="2" count="3" type="stmt"/>
-        <line num="9" count="15" type="stmt"/>
-        <line num="10" count="15" type="stmt"/>
-        <line num="12" count="15" type="stmt"/>
-        <line num="13" count="15" type="stmt"/>
-        <line num="15" count="15" type="stmt"/>
-        <line num="16" count="11" type="cond" truecount="3" falsecount="0"/>
-        <line num="17" count="11" type="cond" truecount="4" falsecount="0"/>
-        <line num="20" count="15" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="7" count="15" type="stmt"/>
+        <line num="8" count="15" type="stmt"/>
+        <line num="11" count="15" type="stmt"/>
+        <line num="12" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="13" count="11" type="cond" truecount="4" falsecount="0"/>
+        <line num="16" count="15" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.select">
@@ -211,66 +210,69 @@
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="3" type="stmt"/>
         <line num="4" count="14" type="stmt"/>
-        <line num="5" count="14" type="stmt"/>
-        <line num="7" count="14" type="stmt"/>
-        <line num="13" count="51" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="14" count="51" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.shared.table">
-      <metrics statements="17" coveredstatements="17" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
+      <metrics statements="18" coveredstatements="18" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
       <file name="Table.tsx" path="/Users/adanane/work/projects/tax-calculator/src/shared/table/Table.tsx">
-        <metrics statements="17" coveredstatements="17" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
+        <metrics statements="18" coveredstatements="18" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
         <line num="1" count="3" type="stmt"/>
-        <line num="12" count="8" type="cond" truecount="3" falsecount="0"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="16" type="stmt"/>
-        <line num="16" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
-        <line num="21" count="6" type="cond" truecount="4" falsecount="0"/>
-        <line num="25" count="6" type="stmt"/>
-        <line num="26" count="34" type="cond" truecount="5" falsecount="0"/>
-        <line num="28" count="6" type="stmt"/>
-        <line num="34" count="12" type="stmt"/>
-        <line num="46" count="14" type="stmt"/>
-        <line num="50" count="28" type="stmt"/>
-        <line num="63" count="6" type="stmt"/>
-        <line num="64" count="6" type="stmt"/>
-        <line num="82" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="16" type="stmt"/>
+        <line num="18" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="30" count="34" type="cond" truecount="5" falsecount="0"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+        <line num="50" count="14" type="stmt"/>
+        <line num="54" count="28" type="stmt"/>
+        <line num="67" count="6" type="stmt"/>
+        <line num="68" count="6" type="stmt"/>
+        <line num="86" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.store.tax-calculation">
       <metrics statements="19" coveredstatements="18" conditionals="10" coveredconditionals="9" methods="9" coveredmethods="9"/>
       <file name="tax-calculation.ts" path="/Users/adanane/work/projects/tax-calculator/src/store/tax-calculation/tax-calculation.ts">
         <metrics statements="19" coveredstatements="18" conditionals="10" coveredconditionals="9" methods="9" coveredmethods="9"/>
-        <line num="42" count="5" type="stmt"/>
-        <line num="49" count="5" type="stmt"/>
-        <line num="53" count="7" type="cond" truecount="7" falsecount="1"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="77" count="0" type="stmt"/>
-        <line num="82" count="19" type="stmt"/>
-        <line num="83" count="24" type="stmt"/>
-        <line num="84" count="15" type="stmt"/>
-        <line num="85" count="35" type="stmt"/>
-        <line num="86" count="10" type="stmt"/>
-        <line num="87" count="15" type="stmt"/>
-        <line num="89" count="19" type="stmt"/>
-        <line num="90" count="6" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="58" count="7" type="cond" truecount="7" falsecount="1"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="87" count="19" type="stmt"/>
+        <line num="88" count="24" type="stmt"/>
+        <line num="89" count="15" type="stmt"/>
+        <line num="90" count="35" type="stmt"/>
+        <line num="91" count="10" type="stmt"/>
+        <line num="92" count="15" type="stmt"/>
+        <line num="94" count="19" type="stmt"/>
+        <line num="95" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.utils">
-      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="assertions.ts" path="/Users/adanane/work/projects/tax-calculator/src/utils/assertions.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="45" type="cond" truecount="2" falsecount="0"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="number.ts" path="/Users/adanane/work/projects/tax-calculator/src/utils/number.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="79" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="12" count="38" type="stmt"/>
       </file>
     </package>
   </project>
