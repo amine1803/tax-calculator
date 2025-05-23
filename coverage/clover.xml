@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747709597647" clover="3.2.0">
-  <project timestamp="1747709597647" name="All files">
-    <metrics statements="186" coveredstatements="183" conditionals="90" coveredconditionals="84" methods="47" coveredmethods="45" elements="323" coveredelements="312" complexity="0" loc="186" ncloc="186" packages="14" files="15" classes="15"/>
+<coverage generated="1747962129576" clover="3.2.0">
+  <project timestamp="1747962129576" name="All files">
+    <metrics statements="191" coveredstatements="188" conditionals="90" coveredconditionals="84" methods="48" coveredmethods="46" elements="329" coveredelements="318" complexity="0" loc="191" ncloc="191" packages="15" files="16" classes="16"/>
     <package name="src">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="/Users/adanane/work/projects/tax-calculator/src/App.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.tax-calculation-effect">
@@ -148,6 +146,19 @@
         <line num="8" count="6" type="cond" truecount="0" falsecount="1"/>
         <line num="9" count="0" type="stmt"/>
         <line num="12" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.layouts.tax-calculator">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="TaxCalculator.tsx" path="/Users/adanane/work/projects/tax-calculator/src/layouts/tax-calculator/TaxCalculator.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.services.tax-brackets">
