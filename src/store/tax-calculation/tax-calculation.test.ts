@@ -12,7 +12,7 @@ import {
     TaxCalculationPageState,
 } from "./tax-calculation";
 import type { TaxCalculationAction } from "./tax-calculation";
-import type { TaxBracket } from "../../components/tax-calculation-form/TaxCalculationForm.types";
+import { TaxBracket } from "../../services/tax-brackets/tax-brackets";
 
 describe("taxCalculationReducer", () => {
     it("handles SET_INCOME", () => {

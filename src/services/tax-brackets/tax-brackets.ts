@@ -1,6 +1,15 @@
 import type { ActionDispatch } from "react";
-import type { TaxBracketResponse } from "../../components/tax-calculation-form/TaxCalculationForm.types.ts";
-import type { TaxCalculationAction } from "../../store/tax-calculation/tax-calculation.ts";
+import type { TaxCalculationAction } from "../../store/tax-calculation/tax-calculation";
+
+export interface TaxBracket {
+    min: number;
+    max?: number;
+    rate: number;
+}
+
+export interface TaxBracketResponse {
+    tax_brackets: TaxBracket[];
+}
 
 // Function that asynchronously fetches the tax brackets from the API
 export async function getTaxBrackets(
