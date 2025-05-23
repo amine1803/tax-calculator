@@ -56,13 +56,15 @@ function TaxCalculationTable() {
         if (!isNumber(income) || rows.length === 0) return [];
 
         const totalTax = rows.reduce((acc, row) => {
-            const amount = row.amount;
+            const amount = +row.amount;
             return acc + amount;
         }, 0);
 
         const salaryAfterTax = income - totalTax;
+        const effectiveRate = (totalTax / income) * 100;
 
         return [
+            { "Effective rate": `${formatNumber(effectiveRate, 3, 2)}%` },
             { "Total income tax amount": totalTax },
             { "Salary after income tax": salaryAfterTax },
         ] as Record<string, number>[];
@@ -100,11 +102,15 @@ function TaxCalculationTable() {
                     case "loaded":
                         return rows.length > 0 ? (
                             <ListTable
-                                headers={headers}
+                                header={headers}
                                 rows={rows}
                                 footer={footer}
                                 cellAlignment="right"
-                                isCurrency={true}
+                                currencyHeaderAndFooter={[
+                                    "Income tax amount",
+                                    "Total income tax amount",
+                                    "Salary after income tax",
+                                ]}
                             />
                         ) : (
                             <span className={styles["tax-calculation-table__empty"]}>

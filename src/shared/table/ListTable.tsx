@@ -1,25 +1,25 @@
 import styles from "./ListTable.module.scss";
 import type { ListTableProps } from "./ListTable.types";
-import { formatNumber, isNumber } from "../../utils/number";
+import { formatNumber } from "../../utils/number";
 
 function ListTable<T extends object>({
-    headers,
+    header,
     rows,
     footer,
     className,
     cellAlignment,
-    isCurrency,
+    currencyHeaderAndFooter,
 }: ListTableProps<T>) {
     // Checks if there are more keys in either the header or the rows and throws an error if there's a mismatch
-    if (headers && rows) {
-        const headerLength = headers.length;
+    if (header && rows) {
+        const headerLength = header.length;
         const mismatched = rows.some((row) => Object.keys(row).length !== headerLength);
 
         if (mismatched)
             throw new Error("One or more rows do not match the header column count in the table.");
     }
 
-    if (headers.length < 2 && footer)
+    if (header.length < 2 && footer)
         throw new Error("To use a footer, original table must have at least 2 columns.");
 
     // Class name(s)
@@ -28,19 +28,20 @@ function ListTable<T extends object>({
         .filter(Boolean)
         .join(" ");
 
-    // Verifies if a cell is a number and a currency and makes sure to put the currency and 2 decimals
-    const cellValue = (value: number | string | boolean) =>
-        isNumber(value) && isCurrency && value ? `$${formatNumber(value, 2, 2)}` : value;
+    const cellValue = (value: string | number | boolean, title: string) => {
+        if (currencyHeaderAndFooter?.includes(title)) return `$${formatNumber(+value, 2)}`;
+        return String(value);
+    };
 
     // How much do the footer titles span
-    const footerColSpan = footer && headers.length > 2 ? headers.length - 1 : 1;
+    const footerColSpan = footer && header.length > 2 ? header.length - 1 : 1;
 
     return (
         <table className={tableClassName}>
-            {headers && (
+            {header.length > 0 && (
                 <thead>
                     <tr>
-                        {headers.map((header, index) => (
+                        {header.map((header, index) => (
                             <th
                                 key={index}
                                 className={styles["table__header-cell"]}>
@@ -50,7 +51,7 @@ function ListTable<T extends object>({
                     </tr>
                 </thead>
             )}
-            {rows && (
+            {rows.length > 0 && (
                 <tbody>
                     {rows.map((row, rowIndex) => (
                         <tr
@@ -60,7 +61,7 @@ function ListTable<T extends object>({
                                 <td
                                     key={cellIndex}
                                     className={cellClassName}>
-                                    {cellValue(value)}
+                                    {cellValue(value, header[cellIndex])}
                                 </td>
                             ))}
                         </tr>
@@ -80,7 +81,7 @@ function ListTable<T extends object>({
                                     colSpan={footerColSpan}>
                                     {key}
                                 </td>
-                                <td className={cellClassName}>{cellValue(value)}</td>
+                                <td className={cellClassName}>{cellValue(value, key)}</td>
                             </tr>
                         );
                     })}

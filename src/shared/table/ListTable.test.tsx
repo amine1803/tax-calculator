@@ -2,21 +2,21 @@ import { render, screen } from "@testing-library/react";
 import ListTable from "./ListTable";
 
 describe("Table", () => {
-    const headers = ["Bracket", "Tax Owed"];
+    const header = ["Bracket", "Tax Owed"];
     const rows = [
         { Bracket: "$0 - $10,000", "Tax Owed": 1000 },
         { Bracket: "$10,001 - $20,000", "Tax Owed": 2000 },
     ];
     const footer = [{ Total: 3000 }];
 
-    it("renders headers", () => {
+    it("renders header", () => {
         render(
             <ListTable
-                headers={headers}
+                header={header}
                 rows={rows}
             />,
         );
-        headers.forEach((header) => {
+        header.forEach((header) => {
             expect(screen.getByRole("columnheader", { name: header })).toBeInTheDocument();
         });
     });
@@ -24,7 +24,7 @@ describe("Table", () => {
     it("renders rows and cells", () => {
         render(
             <ListTable
-                headers={headers}
+                header={header}
                 rows={rows}
             />,
         );
@@ -39,7 +39,7 @@ describe("Table", () => {
     it("renders footer with correct values", () => {
         render(
             <ListTable
-                headers={headers}
+                header={header}
                 rows={rows}
                 footer={footer}
             />,
@@ -48,26 +48,12 @@ describe("Table", () => {
         expect(screen.getByText("3000")).toBeInTheDocument();
     });
 
-    it("formats numeric cells as currency if isCurrency is true", () => {
-        render(
-            <ListTable
-                headers={headers}
-                rows={rows}
-                footer={footer}
-                isCurrency
-            />,
-        );
-        expect(screen.getByText("$1,000.00")).toBeInTheDocument();
-        expect(screen.getByText("$2,000.00")).toBeInTheDocument();
-        expect(screen.getByText("$3,000.00")).toBeInTheDocument();
-    });
-
     it("throws error if row column count mismatches header", () => {
         const invalidRows = [{ Bracket: "$0 - $10,000" }]; // Missing one column
         const renderInvalidTable = () =>
             render(
                 <ListTable
-                    headers={headers}
+                    header={header}
                     rows={invalidRows}
                 />,
             );
@@ -76,15 +62,15 @@ describe("Table", () => {
         );
     });
 
-    it("throws error if footer exists but headers length is less than 2", () => {
-        const invalidHeaders = ["Only One Header"];
+    it("throws error if footer exists but header length is less than 2", () => {
+        const invalidHeader = ["Only One Header"];
         const rows = [{ "Only One Header": 123 }];
         const footer = [{ Total: 123 }];
 
         const renderInvalidTable = () =>
             render(
                 <ListTable
-                    headers={invalidHeaders}
+                    header={invalidHeader}
                     rows={rows}
                     footer={footer}
                 />,
@@ -93,5 +79,35 @@ describe("Table", () => {
         expect(renderInvalidTable).toThrow(
             "To use a footer, original table must have at least 2 columns.",
         );
+    });
+
+    it("formats cell as currency when header is listed in currencyHeaderAndFooter", () => {
+        const header = ["Label", "Amount"];
+        const rows = [{ Label: "Tax", Amount: 1234.56 }];
+        const currencyHeaderAndFooter = ["Amount"];
+
+        render(
+            <ListTable
+                header={header}
+                rows={rows}
+                currencyHeaderAndFooter={currencyHeaderAndFooter}
+            />,
+        );
+
+        expect(screen.getByText("$1,234.56")).toBeInTheDocument();
+    });
+
+    it("renders non-currency value as string without currency formatting", () => {
+        const header = ["Label", "Amount"];
+        const rows = [{ Label: "Income", Amount: 1000 }];
+
+        render(
+            <ListTable
+                header={header}
+                rows={rows}
+            />,
+        );
+
+        expect(screen.getByText("1000")).toBeInTheDocument();
     });
 });

@@ -65,12 +65,8 @@ describe("TaxCalculationTable", () => {
     it("renders correct tax amounts and salary after tax", () => {
         (useTaxBracketsContext as jest.Mock).mockReturnValue({ state: mockState });
         render(<TaxCalculationTable />);
-        expect(
-            screen.getByText((_, element) => element?.textContent === "$11,000.00"),
-        ).toBeInTheDocument();
-        expect(
-            screen.getByText((_, element) => element?.textContent === "$49,000.00"),
-        ).toBeInTheDocument();
+        expect(screen.getByText((content) => content.includes("$11,000"))).toBeInTheDocument();
+        expect(screen.getByText((content) => content.includes("$49,000"))).toBeInTheDocument();
     });
 
     it("renders empty when income is not a number", () => {
