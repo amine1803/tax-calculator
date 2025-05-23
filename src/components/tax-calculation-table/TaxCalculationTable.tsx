@@ -4,7 +4,7 @@ import styles from "./TaxCalculationTable.module.scss";
 import type { TaxCalculationTableType } from "./TaxCalculationTable.types";
 import { useTaxBracketsContext } from "../../hooks/use-tax-brackets-context";
 import Card from "../../shared/card/Card";
-import Table from "../../shared/table/Table";
+import ListTable from "../../shared/table/ListTable";
 import {
     selectError,
     selectIncome,
@@ -99,7 +99,7 @@ function TaxCalculationTable() {
                         );
                     case "loaded":
                         return rows.length > 0 ? (
-                            <Table
+                            <ListTable
                                 headers={headers}
                                 rows={rows}
                                 footer={footer}

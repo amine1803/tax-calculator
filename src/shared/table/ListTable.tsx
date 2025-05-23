@@ -1,15 +1,15 @@
-import styles from "./Table.module.scss";
-import type { TableProps } from "./Table.types";
+import styles from "./ListTable.module.scss";
+import type { ListTableProps } from "./ListTable.types";
 import { formatNumber, isNumber } from "../../utils/number";
 
-function Table<T extends object>({
+function ListTable<T extends object>({
     headers,
     rows,
     footer,
     className,
     cellAlignment,
     isCurrency,
-}: TableProps<T>) {
+}: ListTableProps<T>) {
     // Checks if there are more keys in either the header or the rows and throws an error if there's a mismatch
     if (headers && rows) {
         const headerLength = headers.length;
@@ -18,6 +18,9 @@ function Table<T extends object>({
         if (mismatched)
             throw new Error("One or more rows do not match the header column count in the table.");
     }
+
+    if (headers.length < 2 && footer)
+        throw new Error("To use a footer, original table must have at least 2 columns.");
 
     // Class name(s)
     const tableClassName = [styles.table, className].filter(Boolean).join(" ");
@@ -28,6 +31,9 @@ function Table<T extends object>({
     // Verifies if a cell is a number and a currency and makes sure to put the currency and 2 decimals
     const cellValue = (value: number | string | boolean) =>
         isNumber(value) && isCurrency && value ? `$${formatNumber(value, 2, 2)}` : value;
+
+    // How much do the footer titles span
+    const footerColSpan = footer && headers.length > 2 ? headers.length - 1 : 1;
 
     return (
         <table className={tableClassName}>
@@ -70,7 +76,8 @@ function Table<T extends object>({
                                 <td
                                     className={styles["table__footer-cell--key"]}
                                     role="heading"
-                                    aria-level={1}>
+                                    aria-level={1}
+                                    colSpan={footerColSpan}>
                                     {key}
                                 </td>
                                 <td className={cellClassName}>{cellValue(value)}</td>
@@ -83,4 +90,4 @@ function Table<T extends object>({
     );
 }
 
-export default Table;
+export default ListTable;

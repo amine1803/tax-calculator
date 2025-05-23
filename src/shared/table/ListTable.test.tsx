@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Table from "./Table";
+import ListTable from "./ListTable";
 
 describe("Table", () => {
     const headers = ["Bracket", "Tax Owed"];
@@ -11,7 +11,7 @@ describe("Table", () => {
 
     it("renders headers", () => {
         render(
-            <Table
+            <ListTable
                 headers={headers}
                 rows={rows}
             />,
@@ -23,7 +23,7 @@ describe("Table", () => {
 
     it("renders rows and cells", () => {
         render(
-            <Table
+            <ListTable
                 headers={headers}
                 rows={rows}
             />,
@@ -38,7 +38,7 @@ describe("Table", () => {
 
     it("renders footer with correct values", () => {
         render(
-            <Table
+            <ListTable
                 headers={headers}
                 rows={rows}
                 footer={footer}
@@ -50,7 +50,7 @@ describe("Table", () => {
 
     it("formats numeric cells as currency if isCurrency is true", () => {
         render(
-            <Table
+            <ListTable
                 headers={headers}
                 rows={rows}
                 footer={footer}
@@ -66,13 +66,32 @@ describe("Table", () => {
         const invalidRows = [{ Bracket: "$0 - $10,000" }]; // Missing one column
         const renderInvalidTable = () =>
             render(
-                <Table
+                <ListTable
                     headers={headers}
                     rows={invalidRows}
                 />,
             );
         expect(renderInvalidTable).toThrow(
             "One or more rows do not match the header column count in the table.",
+        );
+    });
+
+    it("throws error if footer exists but headers length is less than 2", () => {
+        const invalidHeaders = ["Only One Header"];
+        const rows = [{ "Only One Header": 123 }];
+        const footer = [{ Total: 123 }];
+
+        const renderInvalidTable = () =>
+            render(
+                <ListTable
+                    headers={invalidHeaders}
+                    rows={rows}
+                    footer={footer}
+                />,
+            );
+
+        expect(renderInvalidTable).toThrow(
+            "To use a footer, original table must have at least 2 columns.",
         );
     });
 });
