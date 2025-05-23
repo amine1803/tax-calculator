@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -156,7 +156,8 @@
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,37 +170,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,8 +230,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,26 +253,26 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import styles from "./ListTable.module.scss";
 import type { ListTableProps } from "./ListTable.types";
-import { formatNumber, isNumber } from "../../utils/number";
+import { formatNumber } from "../../utils/number";
 &nbsp;
 function ListTable&lt;T extends object&gt;({
-    headers,
+    header,
     rows,
     footer,
     className,
     cellAlignment,
-    isCurrency,
+    currencyHeaderAndFooter,
 }: ListTableProps&lt;T&gt;) {
     // Checks if there are more keys in either the header or the rows and throws an error if there's a mismatch
-    if (headers &amp;&amp; rows) {
-        const headerLength = headers.length;
+    if (header &amp;&amp; rows) {
+        const headerLength = header.length;
         const mismatched = rows.some((row) =&gt; Object.keys(row).length !== headerLength);
 &nbsp;
         if (mismatched)
             throw new Error("One or more rows do not match the header column count in the table.");
     }
 &nbsp;
-    if (headers.length &lt; 2 &amp;&amp; footer)
+    if (header.length &lt; 2 &amp;&amp; footer)
         throw new Error("To use a footer, original table must have at least 2 columns.");
 &nbsp;
     // Class name(s)
@@ -279,19 +281,20 @@ function ListTable&lt;T extends object&gt;({
         .filter(Boolean)
         .join(" ");
 &nbsp;
-    // Verifies if a cell is a number and a currency and makes sure to put the currency and 2 decimals
-    const cellValue = (value: number | string | boolean) =&gt;
-        isNumber(value) &amp;&amp; isCurrency &amp;&amp; value ? `$${formatNumber(value, 2, 2)}` : value;
+    const cellValue = (value: string | number | boolean, title: string) =&gt; {
+        if (currencyHeaderAndFooter?.includes(title)) return `$${formatNumber(+value, 2)}`;
+        return String(value);
+    };
 &nbsp;
     // How much do the footer titles span
-    const footerColSpan = footer &amp;&amp; headers.length &gt; 2 ? <span class="branch-0 cbranch-no" title="branch not covered" >headers.length - 1 </span>: 1;
+    const footerColSpan = footer &amp;&amp; header.length &gt; 2 ? <span class="branch-0 cbranch-no" title="branch not covered" >header.length - 1 </span>: 1;
 &nbsp;
     return (
         &lt;table className={tableClassName}&gt;
-            {headers &amp;&amp; (
+            {header.length &gt; 0 &amp;&amp; (
                 &lt;thead&gt;
                     &lt;tr&gt;
-                        {headers.map((header, index) =&gt; (
+                        {header.map((header, index) =&gt; (
                             &lt;th
                                 key={index}
                                 className={styles["table__header-cell"]}&gt;
@@ -301,7 +304,7 @@ function ListTable&lt;T extends object&gt;({
                     &lt;/tr&gt;
                 &lt;/thead&gt;
             )}
-            {rows &amp;&amp; (
+            {rows.length &gt; 0 &amp;&amp; (
                 &lt;tbody&gt;
                     {rows.map((row, rowIndex) =&gt; (
                         &lt;tr
@@ -311,7 +314,7 @@ function ListTable&lt;T extends object&gt;({
                                 &lt;td
                                     key={cellIndex}
                                     className={cellClassName}&gt;
-                                    {cellValue(value)}
+                                    {cellValue(value, header[cellIndex])}
                                 &lt;/td&gt;
                             ))}
                         &lt;/tr&gt;
@@ -331,7 +334,7 @@ function ListTable&lt;T extends object&gt;({
                                     colSpan={footerColSpan}&gt;
                                     {key}
                                 &lt;/td&gt;
-                                &lt;td className={cellClassName}&gt;{cellValue(value)}&lt;/td&gt;
+                                &lt;td className={cellClassName}&gt;{cellValue(value, key)}&lt;/td&gt;
                             &lt;/tr&gt;
                         );
                     })}
@@ -349,7 +352,7 @@ export default ListTable;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-23T01:22:59.673Z
+                at 2025-05-23T01:52:43.362Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
