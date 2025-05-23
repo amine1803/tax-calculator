@@ -16,15 +16,20 @@ function ListTable<T extends object>({
         const mismatched = rows.some((row) => Object.keys(row).length !== headerLength);
 
         if (mismatched)
-            throw new Error("One or more rows do not match the header column count in the table.");
+            throw new Error(
+                "One or more rows do not match the header column count in the list table.",
+            );
     }
 
     if (header.length < 2 && footer)
-        throw new Error("To use a footer, original table must have at least 2 columns.");
+        throw new Error("To use a footer, original list table must have at least 2 columns.");
 
     // Class name(s)
-    const tableClassName = [styles.table, className].filter(Boolean).join(" ");
-    const cellClassName = [styles.table__cell, styles[`table__cell--${cellAlignment ?? "left"}`]]
+    const tableClassName = [styles["list-table"], className].filter(Boolean).join(" ");
+    const cellClassName = [
+        styles["list-table__cell"],
+        styles[`list-table__cell--${cellAlignment ?? "left"}`],
+    ]
         .filter(Boolean)
         .join(" ");
 
@@ -44,7 +49,7 @@ function ListTable<T extends object>({
                         {header.map((header, index) => (
                             <th
                                 key={index}
-                                className={styles["table__header-cell"]}>
+                                className={styles["list-table__header-cell"]}>
                                 {header}
                             </th>
                         ))}
@@ -75,7 +80,7 @@ function ListTable<T extends object>({
                         return (
                             <tr key={footerIndex}>
                                 <td
-                                    className={styles["table__footer-cell--key"]}
+                                    className={styles["list-table__footer-cell--key"]}
                                     role="heading"
                                     aria-level={1}
                                     colSpan={footerColSpan}>

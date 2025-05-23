@@ -58,7 +58,7 @@ describe("Table", () => {
                 />,
             );
         expect(renderInvalidTable).toThrow(
-            "One or more rows do not match the header column count in the table.",
+            "One or more rows do not match the header column count in the list table.",
         );
     });
 
@@ -77,7 +77,7 @@ describe("Table", () => {
             );
 
         expect(renderInvalidTable).toThrow(
-            "To use a footer, original table must have at least 2 columns.",
+            "To use a footer, original list table must have at least 2 columns.",
         );
     });
 

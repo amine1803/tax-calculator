@@ -4,7 +4,7 @@ import styles from "./TaxCalculationTable.module.scss";
 import type { TaxCalculationTableType } from "./TaxCalculationTable.types";
 import { useTaxBracketsContext } from "../../hooks/use-tax-brackets-context";
 import Card from "../../shared/card/Card";
-import ListTable from "../../shared/table/ListTable";
+import ListTable from "../../shared/list-table/ListTable";
 import {
     selectError,
     selectIncome,
@@ -29,7 +29,7 @@ function TaxCalculationTable() {
     const isLoading = selectIsLoading(state);
 
     // Header cells
-    const headers = ["Tax bracket(s)", "Income tax amount"];
+    const header = ["Tax bracket(s)", "Income tax amount"];
 
     // Rows cells content (brackets and amount)
     const rows = useMemo(() => {
@@ -102,7 +102,7 @@ function TaxCalculationTable() {
                     case "loaded":
                         return rows.length > 0 ? (
                             <ListTable
-                                header={headers}
+                                header={header}
                                 rows={rows}
                                 footer={footer}
                                 cellAlignment="right"
