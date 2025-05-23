@@ -1,0 +1,23 @@
+.tax-calculator {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: repeat(2, auto);
+  width: 900px;
+  align-items: start;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    max-width: 576px;
+    width: 100%;
+  }
+
+  .title {
+    justify-self: center;
+
+    @media screen and (min-width: 901px) {
+      grid-column: span 2;
+    }
+  }
+}

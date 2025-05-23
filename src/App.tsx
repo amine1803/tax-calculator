@@ -1,17 +1,13 @@
-import styles from "./App.module.scss";
-import TaxCalculationEffect from "./components/tax-calculation-effect/TaxCalculationEffect";
 import TaxCalculationForm from "./components/tax-calculation-form/TaxCalculationForm";
 import TaxCalculationTable from "./components/tax-calculation-table/TaxCalculationTable";
-import TaxBracketsProvider from "./contexts/tax-brackets/TaxBrackets.provider";
+import TaxCalculator from "./layouts/tax-calculator/TaxCalculator";
 
 function App() {
     return (
-        <TaxBracketsProvider>
-            <h1 className={styles.title}>Tax Calculator</h1>
-            <TaxCalculationEffect />
+        <TaxCalculator title="Tax Calculator">
             <TaxCalculationForm />
             <TaxCalculationTable />
-        </TaxBracketsProvider>
+        </TaxCalculator>
     );
 }
 
