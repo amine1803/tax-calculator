@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "stylelint": "stylelint \"**/*.scss\"",
     "preview": "vite preview",
     "test": "jest",
     "test:coverage": "jest --coverage"
@@ -42,7 +43,7 @@
     "prettier": "3.5.3",
     "sass": "^1.89.0",
     "stylelint": "^16.19.1",
-    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard-scss": "^15.0.0",
     "stylelint-scss": "^6.12.0",
     "ts-jest": "^29.3.4",
     "ts-node": "^10.9.2",

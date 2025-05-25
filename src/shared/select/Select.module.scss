@@ -5,6 +5,7 @@
 
   &__field {
     @include form-field.field;
+
     padding-right: 2rem;
     background: white url("../../assets/icons/chevron-down.svg") no-repeat right 0.5rem center / 1rem;
     overflow: hidden;

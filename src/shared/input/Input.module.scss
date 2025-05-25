@@ -10,8 +10,12 @@
   &__field {
     @include form-field.field;
 
-    &.input__field--with-prefix {
-      padding-left: 0.25rem;
+    &.input {
+      &__field {
+        &--with-prefix {
+          padding-left: 0.25rem;
+        }
+      }
     }
   }
 }

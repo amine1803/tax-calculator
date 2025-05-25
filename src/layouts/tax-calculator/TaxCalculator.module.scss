@@ -6,7 +6,7 @@
   width: 900px;
   align-items: start;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (width <= 900px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     max-width: 576px;
@@ -16,7 +16,7 @@
   .title {
     justify-self: center;
 
-    @media screen and (min-width: 901px) {
+    @media screen and (width > 900px) {
       grid-column: span 2;
     }
   }
