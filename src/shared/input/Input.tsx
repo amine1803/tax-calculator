@@ -1,25 +1,16 @@
-import { KeyboardEventHandler } from "react";
 import styles from "./Input.module.scss";
 import { InputProps } from "./Input.types";
 
-function Input({ value, prefix, className, type, onKeyDown, ...props }: InputProps) {
-    // Class name(s)
-    const wrapperClassName = [styles.input, className].filter(Boolean).join(" ");
+function Input({ value, prefix, ref, ...props }: InputProps) {
     const fieldClassName = [styles.input__field, styles["input__field--with-prefix"]].join(" ");
 
-    // Prevents the user to type usual acceptable characters for a number input since we only use positive ones
-    const onInputKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
-        if (type === "number" && ["-", "e", "E", "+"].includes(event.key)) event.preventDefault();
-        onKeyDown?.(event);
-    };
-
     return (
-        <div className={wrapperClassName}>
+        <div className={styles.input}>
             {prefix && <span className={styles.input__prefix}>{prefix}</span>}
             <input
                 className={fieldClassName}
                 value={value}
-                onKeyDown={onInputKeyDown}
+                ref={ref}
                 {...props}
             />
         </div>

@@ -1,6 +1,0 @@
-.tax-calculation-form {
-  @media screen and (width <= 900px) {
-    justify-self: center;
-    width: calc(300px - 2rem - 2px); // remove the padding and borders
-  }
-}

@@ -1,0 +1,35 @@
+.tax-calculator {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: auto;
+  gap: 2rem;
+
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    grid-column-start: span 2;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__results {
+    display: flex;
+    gap: 1rem;
+
+    h3 {
+      margin: 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

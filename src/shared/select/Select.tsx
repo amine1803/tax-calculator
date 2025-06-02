@@ -1,12 +1,9 @@
 import styles from "./Select.module.scss";
 import type { SelectProps } from "./Select.types";
 
-function Select({ options, className, ...props }: SelectProps) {
-    // Class name(s)
-    const selectClassName = [styles.select, className].filter(Boolean).join(" ");
-
+function Select({ options, ...props }: SelectProps) {
     return (
-        <div className={selectClassName}>
+        <div className={styles.select}>
             <select
                 className={styles.select__field}
                 {...props}>
