@@ -12,6 +12,10 @@
     grid-column-start: span 2;
   }
 
+  &__error {
+    color: red;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
