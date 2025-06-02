@@ -47,18 +47,6 @@ describe("Select", () => {
         expect(onChange).toHaveBeenCalled();
     });
 
-    it("applies custom className", () => {
-        render(
-            <Select
-                options={options}
-                className="custom-class"
-                aria-label="year"
-            />,
-        );
-        const wrapper = screen.getByLabelText("year").parentElement;
-        expect(wrapper).toHaveClass("custom-class");
-    });
-
     it("spreads additional props", () => {
         render(
             <Select

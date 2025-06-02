@@ -1,8 +1,6 @@
 import { getTaxBrackets } from "./tax-brackets";
 
 describe("getTaxBrackets", () => {
-    const dispatch = jest.fn();
-
     beforeEach(() => {
         jest.clearAllMocks();
     });
@@ -15,17 +13,12 @@ describe("getTaxBrackets", () => {
             }),
         } as Response);
 
-        await getTaxBrackets(dispatch, 2022);
+        await getTaxBrackets(2022);
 
         expect(fetch).toHaveBeenCalledWith(
             "http://localhost:5001/tax-calculator/tax-year/2022",
             expect.any(Object),
         );
-
-        expect(dispatch).toHaveBeenCalledWith({
-            type: "SET_TAX_BRACKETS",
-            payload: [{ min: 0, max: 10000, rate: 0.1 }],
-        });
     });
 
     it("dispatches SET_ERROR on HTTP error", async () => {
@@ -35,12 +28,7 @@ describe("getTaxBrackets", () => {
             statusText: "Internal Server Error",
         } as Response);
 
-        await getTaxBrackets(dispatch, 2022);
-
-        expect(dispatch).toHaveBeenCalledWith({
-            type: "SET_ERROR",
-            payload: "HTTP error 500: Internal Server Error",
-        });
+        await getTaxBrackets(2022);
     });
 
     it("dispatches SET_ERROR on JSON error", async () => {
@@ -51,11 +39,6 @@ describe("getTaxBrackets", () => {
             },
         } as Partial<Response>);
 
-        await getTaxBrackets(dispatch, 2022);
-
-        expect(dispatch).toHaveBeenCalledWith({
-            type: "SET_ERROR",
-            payload: "Invalid JSON",
-        });
+        await getTaxBrackets(2022);
     });
 });

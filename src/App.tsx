@@ -70,6 +70,9 @@ function App() {
         setYear(2022);
         setTaxBrackets([]);
         setError("");
+        if (incomeInputRef.current) {
+            incomeInputRef.current.value = "";
+        }
     };
 
     // Array of action buttons for the form
