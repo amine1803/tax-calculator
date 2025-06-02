@@ -77,9 +77,9 @@ function App() {
         }
     };
 
-    // Array of action buttons for the form
-    // "Get Results" button submits the form and is disabled while loading
-    // "Reset" button clears the form inputs and results
+    // Array of action buttons for the form.
+    // "Get Results" button submits the form and is disabled while loading.
+    // "Reset" button clears the form inputs and results.
     const actions: ButtonProps[] = [
         {
             label: "Get Results",
@@ -97,20 +97,20 @@ function App() {
 
     return (
         <div className={styles["tax-calculator"]}>
-            {/* App title */}
+            {/** App title */}
             <h1
                 className={styles["tax-calculator__title"]}
                 role="heading">
                 Tax Calculator
             </h1>
-            {/* Form for income and year input */}
+            {/** Form for income and year input */}
             <form
                 className={styles["tax-calculator__form"]}
                 onSubmit={handleSubmit}>
                 <Card
                     actions={actions}
                     actionsPosition="right">
-                    {/* Income input with prefix and ref */}
+                    {/** Income input with prefix and ref */}
                     <Input
                         defaultValue={income}
                         prefix="$"
@@ -118,7 +118,7 @@ function App() {
                         placeholder="income"
                         ref={incomeInputRef}
                     />
-                    {/* Year selection dropdown */}
+                    {/** Year selection dropdown */}
                     <Select
                         value={year}
                         options={years}
@@ -127,7 +127,7 @@ function App() {
                     />
                 </Card>
             </form>
-            {/* Card to display results, errors, or loading state */}
+            {/** Card to display results, errors or loading state */}
             <Card>
                 {error ? (
                     // Display error message if any
