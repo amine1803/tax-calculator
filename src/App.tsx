@@ -22,6 +22,8 @@ function App() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     // State to store any error messages
     const [error, setError] = useState<string>("");
+
+    // Array of years for the year selection dropdown
     const years = [2019, 2020, 2021, 2022];
     // Reference to the income input element for direct DOM access
     const incomeInputRef = useRef<HTMLInputElement>(null);
